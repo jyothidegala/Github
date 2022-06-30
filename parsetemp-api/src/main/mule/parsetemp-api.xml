@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener doc:name="Listener" doc:id="7bec14ef-5337-4312-9c22-54e966814e99" config-ref="HTTP_Listener_config" path="parse"/>
 		<parse-template doc:name="Parse Template" doc:id="5f10426e-cbef-4d5b-a905-0fdf954fcd36" location="C:\Users\dnarni\Desktop\parsetemp\parse.txt"/>
 		<logger level="INFO" doc:name="Logger" doc:id="46ddc82a-bd01-4bed-bd55-71c2475dc154" message="#[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="46ddc82a-bd01-4bed-bd55-71c2475dc154" message="changes made by someone"/>
 	</flow>
 </mule>
