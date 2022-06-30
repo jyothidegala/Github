@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="97f3a14b-0d21-4b46-9eb0-9ebd7c8ca40e" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="parsetemp-apiFlow" doc:id="6f16a348-9fed-4948-9e8d-9a8cd48af8b1" >
+		<http:listener doc:name="Listener" doc:id="7bec14ef-5337-4312-9c22-54e966814e99" config-ref="HTTP_Listener_config" path="parse"/>
+		<parse-template doc:name="Parse Template" doc:id="5f10426e-cbef-4d5b-a905-0fdf954fcd36" location="C:\Users\dnarni\Desktop\parsetemp\parse.txt"/>
+		<logger level="INFO" doc:name="Logger" doc:id="46ddc82a-bd01-4bed-bd55-71c2475dc154" message="#[payload]"/>
+	</flow>
+</mule>
